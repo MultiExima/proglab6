@@ -52,27 +52,22 @@ public class UpdateCommand extends ServerCommand {
         }
 
         try {
-            // Проверяем, существует ли элемент с таким id
             Flat oldFlat = collectionManager.getById(id);
             if (oldFlat == null) {
                 return new Response("Элемент с id=" + id + " не найден", false);
             }
 
-            // Устанавливаем id и дату создания из старого объекта
             newFlat.setId(id);
-            newFlat.setCreationDate(oldFlat.getCreationDate()); // Сохраняем дату создания
+            newFlat.setCreationDate(oldFlat.getCreationDate());
 
-            // Заменяем update на removeById + add, так как update отсутствует
             boolean removed = collectionManager.removeById(id);
             if (removed) {
-                collectionManager.add(newFlat); // Добавляем обновленный элемент
+                collectionManager.add(newFlat);
                 return new Response("Элемент успешно обновлен", true);
             } else {
-                // Эта ветка может быть недостижима, если getById проверка надежна
                 return new Response("Не удалось обновить элемент (ошибка при удалении старого)", false);
             }
         } catch (Exception e) {
-            // Логирование
             return new Response("Ошибка при обновлении элемента: " + e.getMessage(), false);
         }
     }
