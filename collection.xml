@@ -1,0 +1,40 @@
+<Stack>
+  <item>
+    <id>1</id>
+    <name>Квартира 1</name>
+    <coordinates>
+      <x>10.5</x>
+      <y>20</y>
+    </coordinates>
+    <creationDate>2025-03-02T12:00:00</creationDate>
+    <area>75</area>
+    <numberOfRooms>3</numberOfRooms>
+    <furnish>DESIGNER</furnish>
+    <view/>
+    <transport>FEW</transport>
+    <house>
+      <name>Жилой дом</name>
+      <year>2020</year>
+      <numberOfFloors>9</numberOfFloors>
+    </house>
+  </item>
+  <item>
+    <id>2</id>
+    <name>NameExample</name>
+    <coordinates>
+      <x>0.0</x>
+      <y>0</y>
+    </coordinates>
+    <creationDate>2025-03-03T18:25:00.8284898</creationDate>
+    <area>1</area>
+    <numberOfRooms>1</numberOfRooms>
+    <furnish/>
+    <view/>
+    <transport>NONE</transport>
+    <house>
+      <name>HouseName</name>
+      <year>2000</year>
+      <numberOfFloors>1</numberOfFloors>
+    </house>
+  </item>
+</Stack>
