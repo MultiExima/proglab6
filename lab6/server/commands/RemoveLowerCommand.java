@@ -32,7 +32,7 @@ public class RemoveLowerCommand extends ServerCommand {
     @Override
     public Response execute(String[] args, Serializable data) {
         if (collectionManager.getSize() == 0) {
-            return new Response("Коллекция пуста", true); // Можно считать успехом, т.к. удалять нечего
+            return new Response("Коллекция пуста", true);
         }
 
         if (!(data instanceof Flat)) {
