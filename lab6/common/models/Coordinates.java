@@ -3,8 +3,6 @@ package lab6.common.models;
 import java.io.Serializable;
 
 public class Coordinates implements Serializable {
-    private static final long serialVersionUID = 1L;
-    
     private Double x; //Значение поля должно быть больше -371, Поле не может быть null
     private Integer y; //Поле не может быть null
 
