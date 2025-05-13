@@ -49,7 +49,6 @@ public class RemoveAllByViewCommand extends ServerCommand {
 
         try {
             int initialSize = collectionManager.getSize();
-            // Предполагаем, что CollectionManager имеет метод removeIf или используем getCollection().removeIf
             boolean removed = collectionManager.getCollection().removeIf(flat -> flat.getView() == view);
             int removedCount = initialSize - collectionManager.getSize();
 
