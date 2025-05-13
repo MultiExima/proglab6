@@ -38,11 +38,9 @@ public class AddCommand extends ServerCommand {
         Flat flat = (Flat) data;
         
         try {
-            // Предполагаем, что CollectionManager имеет метод add
             collectionManager.add(flat); 
             return new Response("Квартира успешно добавлена в коллекцию", true);
         } catch (Exception e) {
-            // Логирование ошибки на сервере может быть добавлено здесь
             return new Response("Ошибка при добавлении квартиры: " + e.getMessage(), false);
         }
     }
