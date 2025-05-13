@@ -31,20 +31,17 @@ public class RemoveFirstCommand extends ServerCommand {
     @Override
     public Response execute(String[] args, Serializable data) {
         if (collectionManager.getSize() == 0) {
-            return new Response("Коллекция пуста", false); // Ошибка, так как нечего удалять
+            return new Response("Коллекция пуста", false);
         }
 
         try {
-            // Предполагаем, что CollectionManager имеет метод removeFirst
             boolean removed = collectionManager.removeFirst();
             if (removed) {
                 return new Response("Первый элемент успешно удален", true);
             } else {
-                // Эта ветка может быть достигнута, если коллекция изменилась между getSize и removeFirst
                 return new Response("Не удалось удалить первый элемент (возможно, коллекция пуста)", false);
             }
         } catch (Exception e) {
-            // Логирование
             return new Response("Ошибка при удалении первого элемента: " + e.getMessage(), false);
         }
     }
