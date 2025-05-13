@@ -3,8 +3,6 @@ package lab6.common.models;
 import java.io.Serializable;
 
 public class House implements Serializable {
-    private static final long serialVersionUID = 1L;
-    
     private String name; //Поле не может быть null
     private long year; //Значение поля должно быть больше 0
     private Integer numberOfFloors; //Значение поля должно быть больше 0
