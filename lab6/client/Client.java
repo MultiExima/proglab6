@@ -175,7 +175,7 @@ public class Client {
          }
 
 
-        ByteBuffer responseBytes = ByteBuffer.allocate(responseLength); // Allocate buffer for the response object
+        ByteBuffer responseBytes = ByteBuffer.allocate(responseLength);
         int totalBytesRead = 0;
         while (totalBytesRead < responseLength) {
             int bytesRead = channel.read(responseBytes);
