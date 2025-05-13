@@ -58,7 +58,6 @@ public class FilterByFurnishCommand extends ServerCommand {
         }
 
         try {
-            // Предполагаем наличие getCollection() и getFurnish()
             List<Flat> filteredList = collectionManager.getCollection().stream()
                     .filter(flat -> flat.getFurnish() == furnish)
                     .collect(Collectors.toList());
@@ -66,14 +65,12 @@ public class FilterByFurnishCommand extends ServerCommand {
             if (filteredList.isEmpty()) {
                 return new Response("Элементы с заданным значением furnish не найдены", true);
             } else {
-                // Сериализуем список или его строковое представление для ответа
                 String resultString = filteredList.stream()
-                                               .map(Object::toString) // Используем toString() для представления
+                                               .map(Object::toString)
                                                .collect(Collectors.joining("\n"));
                 return new Response("Элементы с furnish = " + furnish + ":\n" + resultString, true);
             }
         } catch (Exception e) {
-            // Логирование
             return new Response("Ошибка при фильтрации: " + e.getMessage(), false);
         }
     }
