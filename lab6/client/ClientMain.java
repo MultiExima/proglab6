@@ -23,7 +23,6 @@ public class ClientMain {
             System.err.println("Ошибка: Неверный формат порта. Убедитесь, что в NetworkConfig указано число.");
         } catch (Exception e) {
              System.err.println("Произошла ошибка при запуске клиента: " + e.getMessage());
-             e.printStackTrace();
         }
     }
 } 
