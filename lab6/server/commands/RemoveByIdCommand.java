@@ -42,20 +42,16 @@ public class RemoveByIdCommand extends ServerCommand {
         }
 
         try {
-            // Проверяем наличие элемента перед удалением (опционально, removeById может это делать)
             if (collectionManager.getById(id) == null) {
                  return new Response("Элемент с id=" + id + " не найден", false);
             }
             
-            // Предполагаем, что removeById возвращает boolean
             if (collectionManager.removeById(id)) {
                 return new Response("Элемент с id=" + id + " успешно удален", true);
             } else {
-                // Эта ветка может быть недостижима, если getById проверка надежна
                 return new Response("Не удалось удалить элемент с id=" + id + " (возможно, он был удален другим запросом)", false);
             }
         } catch (Exception e) {
-            // Логирование
             return new Response("Ошибка при удалении элемента: " + e.getMessage(), false);
         }
     }
